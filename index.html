@@ -1,103 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <style>
-            .register .nav-tabs .nav-link:hover{
-                border: none;
-            }
-            .text-align{
-                margin-top: -3%;
-                margin-bottom: -9%;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Field Service Report</title>
 
-                padding: 10%;
-                margin-left: 30%;
-            }
-            .form-new{
-                margin-right: 22%;
-                margin-left: 20%;
-            }
-            .register-heading{
-                margin-left: 21%;
-                margin-bottom: 10%;
-                color: #e9ecef;
-            }
-            .register-heading h1{
-                margin-left: 21%;
-                margin-bottom: 10%;
-                color: #e9ecef;
-            }
-            .register{
-                background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
-                margin-top: 3%;
-                padding: 3%;
-                border-radius: 2.5rem;
-            }
-            .btnSubmit
-            {
-                width: 50%;
-                border-radius: 1rem;
-                padding: 1.5%;
-                color: #fff;
-                background-color: #03612e;
-                border: none;
-                cursor: pointer;
-                margin-right: 6%;
-                color: rgb(246, 246, 252);
-                margin-top: 4%;
-            }
-    </style>
+
 
 </head>
-<body>
-    
-<div class="container register">
-            <div class="row">
-                <div class="col-md-12">
-                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Connect Google Spreadsheet to HTML</h3>
-                            <div class="row register-form">
-                                <div class="col-md-12">
-                                    <form method="post" autocomplete="off" name="google-sheet">
-                                        <div class="form-group">
-                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="Message" class="form-control" placeholder="Message" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-          
-          <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyYaC4iG_lwIEVWFN36MgcL0Ulp8AMkK6_VX2xRv9CfOA_veq6I1QijkExxbFpDBU0X/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => location.replace("https://jeybok26.github.io/salamat/"))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-3 text-center bg-info">
+            <h1><em><strong>RAGOBROB CONGREGATION</strong></em></h1>
+            <h3>FIELD SERVICE REPORT</h3>
+        </div>
+    </div>
+
+    </div>
+    <div class="container">
+
+        <div class="jumbotron bg-info">
+
+            <form method="post" autocomplete="off" name="google-sheet">
+                <div class="mb-3">
+
+                    <label for="firstname"><strong>Name</strong></label>
+                    <div class="input-group">
+                        <span for="firstname" class="input-group-text">Name</span>
+                        <input class="form-control form-control-lg" type="text" name="FirstName" id="firstname"
+                            placeholder="First name" aria-label=".form-control-lg example" required />
+
+                        <input class="form-control form-control-lg" type="text" name="LastName" id="lastname"
+                            placeholder="Last name" aria-label=".form-control-lg example" required />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="month"><strong>Month</strong></label>
+                    <div class="input-group">
+                        <span for="month" class="input-group-text"><strong>Month</strong></span>
+                        <select class="form-control form-control-lg" name="Month" id="month"
+                            placeholder="Select a month here." required>
+                            <option value=""></option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <span for="year" class="input-group-text"><strong>Year</strong></span>
+                        <select class="form-control form-control-lg" name="Year" id="year"
+                            aria-label=".form-control-lg example" required>
+                            <option value=""></option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <label for="year">Year</label> -->
+                </div>
+                <div class="form-group">
+                    <label for="placements"><strong>Placements</strong></label>
+                    <input class="form-control form-control-lg" placeholder="Placements (Printed and Electronic"
+                        type="number" name="Placements" id="placements" aria-label=".form-control-lg example" />
+                </div>
+                <div class="form-group">
+                    <label for="videoShowing"><strong>Video Showings</strong></label>
+                    <input class="form-control form-control-lg" placeholder="Video Showings" type="number"
+                        name="VideoShowings" id="videoShowing" aria-label=".form-control-lg example" />
+                </div>
+                <div class="form-group">
+                    <label for="hours"><strong>Hours</strong></label>
+                    <input class="form-control form-control-lg" placeholder="Hours" type="number" name="Hours"
+                        id="hours" aria-label=".form-control-lg example" required />
+                </div>
+                <div class="form-group">
+                    <label for="rv"><strong>Return Visits</strong></label>
+                    <input class="form-control form-control-lg" placeholder="Return Visits" type="number" name="RV"
+                        id="rv" aria-label=".form-control-lg example" />
+                </div>
+                <div class="form-group">
+                    <label for="bs"><strong>Bible Studies</strong></label>
+                    <input class="form-control form-control-lg"
+                        placeholder="Number of Different Bible Studies Conducted" type="number" name="BS" id="bs"
+                        aria-label=".form-control-lg example" />
+                </div>
+                <div class="form-group">
+                    <label for="comments"><strong>Comments</strong></label>
+                    <textarea class="form-control" placeholder="Comments" name="Comments" id="comments"
+                        style="height: 100px"></textarea>
+
+
+                    <!-- <textarea class="form-control form-control-lg" name="entry.1117849806" id="comments" cols="30" rows="2"></textarea aria-label=".form-control-lg example"> -->
+                </div>
+                <div class="mb-3">
+                    <span class="d-inline-block tabindex=" 0" data-toggle="tooltip" title="Send to Jeyyar Boko">
+
+                        <button class="btn btn-success btn-lg btn-inline border border-dark"
+                            style="pointer-events: auto;" type="submit" name="submit"><strong>Send to Jeyyar
+                                Boko</strong></button>
+
+                    </span>
+
+                </div>
+                <div class="mb-3">
+
+                </div>
+            </form>
+
+        </div>
+
+        <script>
+            const scriptURL =
+                'https://script.google.com/macros/s/AKfycbyd-Rgs_fkqUd_Xv1lqgUmhmEbMGXQvMCtr8FM1hG5XWo-iML3GI9Z5Wu-Wt1hOG2RLng/exec'
+            const form = document.forms['google-sheet']
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                    .then(response => location.replace("https://jeybok26.github.io/daghangsalamatpractice/"))
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
 </body>
+
 </html>
